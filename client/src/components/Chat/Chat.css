@@ -55,3 +55,19 @@
   padding: 10px;
   color: gray;
 }
+
+.chat::-webkit-scrollbar-track {
+  background: #ededed;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.chat::-webkit-scrollbar-thumb:hover {
+  background-color: #c4c4c4;
+}
+
+/* For Firefox */
+/* scrollbar-color: white #f1f1f1; */
