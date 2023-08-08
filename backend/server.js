@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import Cors from "cors";
+import dbModel from "./models/dbModel.js";
 //App Config
 const app = express();
 const port = process.env.PORT || 9000;
@@ -33,6 +34,27 @@ mongoose.connection.on("connected", () => {
 
 //API Endpoints
 app.get("/", (req, res) => res.status(200).send("Hello Chat"));
+
+app.post("/message/new", async (req, res) => {
+  const dbMsg = new dbModel(req.body);
+
+  console.log(dbMsg);
+  try {
+    const savedMsg = await dbMsg.save();
+    res.status(200).json(savedMsg);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.get("/message/sync", async (req, res) => {
+  try {
+    const GetMsg = await dbModel.find();
+    res.status(200).json(GetMsg);
+  } catch (err) {
+    console.log(err);
+  }
+});
 //Listener
 app.listen(port, () => {
   connect();
