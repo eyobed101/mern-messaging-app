@@ -26,7 +26,6 @@
   background-color: #f6f6f6;
   height: 39px;
   padding: 10px;
- 
 }
 .sidebar__searchContainer {
   display: flex;
@@ -45,4 +44,10 @@
   outline-width: 0;
   margin-left: 10px;
   background-color: white;
+}
+
+.sidebar__chats {
+  flex: 1;
+  background-color: white;
+  overflow: scroll;
 }
