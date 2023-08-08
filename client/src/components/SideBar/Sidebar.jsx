@@ -5,12 +5,13 @@ import ChatIcon from "@material-ui/icons/Chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Avatar, IconButton } from "@material-ui/core";
 import { SearchOutlined } from "@material-ui/icons";
+import { pic1, pic2 } from "../../assets";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar src="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg" />
+        <Avatar src={pic2} />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
